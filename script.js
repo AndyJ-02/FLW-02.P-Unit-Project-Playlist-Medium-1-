@@ -2,10 +2,10 @@
 
 
 // input variables
-let image = document.querySelector(".image");
-let songName = document.querySelector(".song-name");
-let artist = document.querySelector(".artist");
-let songLink = document.querySelector(".song-link");
+let images = document.querySelector(".image");
+let songNames = document.querySelector(".song-name");
+let artists = document.querySelector(".artist");
+let songLinks = document.querySelector(".song-link");
 
 // button variable
 let add = document.querySelector(".add");
@@ -22,16 +22,16 @@ let displayLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let songNames = ["Change","Cigarettes Out The Window","Are We Still Friends","The Perfect Girl","90210"]
-let artistNames = ["Deftones","Tv Girl","Tyler The Creator","Mareux","Travis Scott"]
-let songLinks = [
+let songNamesList = ["Changes","Cigarettes Out The Window","Are We Still Friends","The Perfect Girl","90210"]
+let artistNamesList = ["Deftones","Tv Girl","Tyler The Creator","Mareux","Travis Scott"]
+let songLinksList = [
 	"https://soundcloud.com/deftones_official/deftones-change-in-the-house",
 	"https://soundcloud.com/tv-girl/cigarettes-out-the-window",
 	"https://soundcloud.com/tylerthecreatorofficial/are-we-still-friends",
 	"https://soundcloud.com/mareux/the-perfect-girl",
 	"https://www.youtube.com/watch?v=BuNBLjJzRoo"
 ]
-let imageUrls = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed","https://i.scdn.co/image/ab67616d0000b27332f5fec7a879ed6ef28f0dfd","https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57","https://i.ytimg.com/vi/W5Sq71VTJ9Q/maxresdefault.jpg","https://images.genius.com/1f2c3d087f56781aad526287f64d24b2.1000x1000x1.png"]
+let imageUrlsList = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed","https://i.scdn.co/image/ab67616d0000b27332f5fec7a879ed6ef28f0dfd","https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57","https://i.ytimg.com/vi/W5Sq71VTJ9Q/maxresdefault.jpg","https://images.genius.com/1f2c3d087f56781aad526287f64d24b2.1000x1000x1.png"]
 
 
 //REFACTOR ARRAYS DAY 
@@ -77,8 +77,18 @@ function emptyDisplay() {
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-
-
+  imageUrlsList.forEach(function(imageUrl){
+  displayImage.insertAdjacentHTML(`beforeend`,`<img src=${imageUrl}>`)  
+  });
+  songNamesList.forEach(function(songName){
+  displaySong.insertAdjacentHTML(`beforeend`,`<p>${songName}</p>`)
+  });
+  artistNamesList.forEach(function(artistName){
+  displayArtist.insertAdjacentHTML(`beforeend`,`<p>${artistName}</p>`)  
+  });
+  songLinksList.forEach(function(songLink){
+  displayLink.insertAdjacentHTML(`beforeend`,`<a href= "${songLink}">"${songLink}"</a>`)  
+  });
 
 }
 
