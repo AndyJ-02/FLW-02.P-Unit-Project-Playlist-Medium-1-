@@ -55,9 +55,23 @@ function addSongInfo() {
 
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
 
+  // Joe: So if we look at the webpage, you can see that there are 4 text fields, once for each of the below variables you've created. 
+  // what they're specifically asking you to do is take input from those fields and save the values in your variables. So if we look at the code along from today, we have the following line   
+//let guestInput = guestName.value;
+// where guestName is the selector for the input. 
+// your selectors are defined at the top of this document, so all you should have to do is take their values. Yeah, you got this. 
+
+let imageUrlInput= images.value
+let songNameInput= songNames.value
+let songArtistsInput= artists.value
+let songLinkInput= songLinks.value
 
 // task 10: use `.push()` to add each input value to the correct array.
-
+  // looks right to me!
+songNamesList.push(songNameInput)
+artistNamesList.push(songArtistInput)
+songLinksList.push(songLinksInput)  
+imageUrlsList.push(imageUrlInput)
 }
 
 
