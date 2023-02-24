@@ -20,18 +20,18 @@ let displayImage = document.querySelector(".display-image");
 let displayLink = document.querySelector(".display-link");
 
 
-
+//To Do: Comment out the arrays, so we can store them in objects 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let songNamesList = ["Changes","Cigarettes Out The Window","Are We Still Friends","The Perfect Girl","90210"]
-let artistNamesList = ["Deftones","Tv Girl","Tyler The Creator","Mareux","Travis Scott"]
-let songLinksList = [
-	"https://soundcloud.com/deftones_official/deftones-change-in-the-house",
-	"https://soundcloud.com/tv-girl/cigarettes-out-the-window",
-	"https://soundcloud.com/tylerthecreatorofficial/are-we-still-friends",
-	"https://soundcloud.com/mareux/the-perfect-girl",
-	"https://www.youtube.com/watch?v=BuNBLjJzRoo"
-]
-let imageUrlsList = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed","https://i.scdn.co/image/ab67616d0000b27332f5fec7a879ed6ef28f0dfd","https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57","https://i.ytimg.com/vi/W5Sq71VTJ9Q/maxresdefault.jpg","https://images.genius.com/1f2c3d087f56781aad526287f64d24b2.1000x1000x1.png"]
+//let songNamesList = ["Changes","Cigarettes Out The Window","Are We Still Friends","The Perfect Girl","90210"]
+//let artistNamesList = ["Deftones","Tv Girl","Tyler The Creator","Mareux","Travis Scott"]
+//let songLinksList = [
+//	"https://soundcloud.com/deftones_official/deftones-change-in-the-house",
+//	"https://soundcloud.com/tv-girl/cigarettes-out-the-window",
+//	"https://soundcloud.com/tylerthecreatorofficial/are-we-still-friends",
+//	"https://soundcloud.com/mareux/the-perfect-girl",
+//	"https://www.youtube.com/watch?v=BuNBLjJzRoo"
+//]
+//let imageUrlsList = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed","https://i.scdn.co/image/ab67616d0000b27332f5fec7a879ed6ef28f0dfd","https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57","https://i.ytimg.com/vi/W5Sq71VTJ9Q/maxresdefault.jpg","https://images.genius.com/1f2c3d087f56781aad526287f64d24b2.1000x1000x1.png"]
 
 
 //REFACTOR ARRAYS DAY 
@@ -39,8 +39,40 @@ let imageUrlsList = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a4
 // task 12: create an object for each of your songs.
 // task 13: inside each object, add key/value pairs to store the image url, song name, artist, and song link.
 // task 14: create an array that stores all of the objects.
-
-
+let song1 = {
+    songName: "Changes",
+    songArtist: "Deftones",
+    songLink: "https://soundcloud.com/deftones_official/deftones-change-in-the-house",
+    songImageUrl: "https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed",
+  
+}
+let song2 = {
+    songName: "Cigarettes Out The Window",
+    songArtist: "Tv Girl",
+    songLink: "https://soundcloud.com/tv-girl/cigarettes-out-the-window",
+    songImageUrl: "https://i.scdn.co/image/ab67616d0000b27332f5fec7a879ed6ef28f0dfd",
+}
+let song3 = {
+    songName: "Are we still Friends",
+    songArtist: "Tyler The Creator",
+    songLink: "https://soundcloud.com/tylerthecreatorofficial/are-we-still-friends",
+    songImageUrl: "https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57",
+}
+let song4 ={
+    songName: "The Perfect Girl",
+    songArtist: "Mareux",
+    songLink: "https://soundcloud.com/mareux/the-perfect-girl",
+    songImageUrl: "https://i.ytimg.com/vi/W5Sq71VTJ9Q/maxresdefault.jpg",  
+}
+let song5 = {
+    songName: "91210",
+    songArtist: "Travis Scott",
+    songLink: "https://www.youtube.com/watch?v=BuNBLjJzRoo",
+    songImageUrl: "https://images.genius.com/1f2c3d087f56781aad526287f64d24b2.1000x1000x1.png",  
+}
+let allSongs = [song1,song2,song3,song4,song5]
+console.log(allSongs)
+  
 
 //REFACTOR LOOPS DAY 
 // task 15: update your `addSongInfo` function so the input values are saved in as values in a new object.
@@ -53,25 +85,29 @@ let imageUrlsList = ["https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a4
 
 function addSongInfo() {
 
+  
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
-
-  // Joe: So if we look at the webpage, you can see that there are 4 text fields, once for each of the below variables you've created. 
-  // what they're specifically asking you to do is take input from those fields and save the values in your variables. So if we look at the code along from today, we have the following line   
-//let guestInput = guestName.value;
-// where guestName is the selector for the input. 
-// your selectors are defined at the top of this document, so all you should have to do is take their values. Yeah, you got this. 
-
 let imageUrlInput= images.value
 let songNameInput= songNames.value
 let songArtistsInput= artists.value
 let songLinkInput= songLinks.value
 
+
+let newSong = {
+  songName: songNameInput,
+  songLink: songLinkInput,
+  songArtist: songArtistsInput,
+  songImageUrl: imageUrlInput, 
+}  
+  
+
 // task 10: use `.push()` to add each input value to the correct array.
   // looks right to me!
-songNamesList.push(songNameInput)
-artistNamesList.push(songArtistInput)
-songLinksList.push(songLinksInput)  
-imageUrlsList.push(imageUrlInput)
+//songNamesList.push(songNameInput)
+// artistNamesList.push(songArtistsInput)
+// songLinksList.push(songLinkInput)  
+// imageUrlsList.push(imageUrlInput)
+  allSongs.push(newSong)
 }
 
 
@@ -91,19 +127,21 @@ function emptyDisplay() {
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-  imageUrlsList.forEach(function(imageUrl){
-  displayImage.insertAdjacentHTML(`beforeend`,`<img src=${imageUrl}>`)  
-  });
-  songNamesList.forEach(function(songName){
-  displaySong.insertAdjacentHTML(`beforeend`,`<p>${songName}</p>`)
-  });
-  artistNamesList.forEach(function(artistName){
-  displayArtist.insertAdjacentHTML(`beforeend`,`<p>${artistName}</p>`)  
-  });
-  songLinksList.forEach(function(songLink){
-  displayLink.insertAdjacentHTML(`beforeend`,`<a href= "${songLink}">"${songLink}"</a>`)  
-  });
-
+  // imageUrlsList.forEach(function(imageUrl){
+  // displayImage.insertAdjacentHTML(`beforeend`,`<img src=${imageUrl}>`)  
+  // });
+  // songNamesList.forEach(function(songName){
+  // displaySong.insertAdjacentHTML(`beforeend`,`<p>${songName}</p>`)
+  // });
+  // artistNamesList.forEach(function(artistName){
+  // displayArtist.insertAdjacentHTML(`beforeend`,`<p>${artistName}</p>`)  
+  // });
+  // songLinksList.forEach(function(songLink){
+  // displayLink.insertAdjacentHTML(`beforeend`,`<a href= "${songLink}">"${songLink}"</a>`)  
+  // });
+ allSongs.forEach(function(newSong){
+   
+ }
 }
 
 
