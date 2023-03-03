@@ -1,4 +1,6 @@
 // task 5: read through the JavaScript starter code to determine where each given function is declared and where each given function is called.
+//let songLength = document.querySelector(".songListDisplay");
+let sLDisplay = document.querySelector(".songListDisplay");
 
 
 // input variables
@@ -139,19 +141,23 @@ function displaySongInfo() {
   // songLinksList.forEach(function(songLink){
   // displayLink.insertAdjacentHTML(`beforeend`,`<a href= "${songLink}">"${songLink}"</a>`)  
   // });
- allSongs.forEach(function(newSong){
-   
- }
+ allSongs.forEach(function(song){
+displayImage.insertAdjacentHTML(`beforeend`,`<img src=${song.songImageUrl}>`)   
+displaySong.insertAdjacentHTML(`beforeend`,`<p>${song.songName}</p>`)
+  displayArtist.insertAdjacentHTML(`beforeend`,`<p>${song.songArtist}</p>`)  
+ displayLink.insertAdjacentHTML(`beforeend`,`<a href= "${song.songLink}">"${song.songLink}"</a>`)  
+ })
 }
-
 
 
 
 
 // click event to add and display songs
 add.onclick = function() {
+  emptyDisplay();
   addSongInfo();
   displaySongInfo();
+  displaySL();
 };
 
 // function call to display stored songs
